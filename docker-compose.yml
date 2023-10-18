@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  chat-service:
+    build:
+      context: ./chat-microservice
+      dockerfile: ./chat-microservice/Dockerfile
+    restart: always
+    ports:
+      - 3001:80
+    deploy:
+      mode: replicated
+      replicas: 1
